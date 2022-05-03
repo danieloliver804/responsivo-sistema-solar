@@ -1,0 +1,362 @@
+/* Fonte principal */
+@font-face {
+font-family: "nasa";
+src: url("fonte/nasalization/nasalization-rg.otf") format("opentype");
+}
+
+/* Reset */
+* {
+padding: 0;
+margin: 0;
+box-sizing: border-box;
+}
+
+body {
+background-image: url(img/fundo-tela.jpg);
+background-repeat: no-repeat;
+background-size: cover;
+}
+
+/* Cabeçalho */
+header{
+display: flex;
+flex-direction: column;
+align-items: center;
+width: 100%;
+height: 200px;
+background-color: rgba(0, 0, 0, 0);
+}
+
+/* Botão menu */
+#btn{
+background-color: rgb(3, 3, 3);
+border-radius: 50%;
+width: 50px;
+height: 50px;
+position: relative;
+top: 10px;
+left: -5px;
+margin-top: 20px;
+}
+
+#btn:hover{
+box-shadow: 6px 0px 50px 15px rgb(255, 255, 255);
+}
+
+/* logo */
+#logo-menu{
+position: absolute;
+top: -27px;
+left: -40px;
+cursor: pointer;
+}
+
+.seta-menu{
+  margin-top: 55px;
+  animation: flutuar 6s infinite;
+}
+
+/* Menu */
+#nav{
+display: flex;
+justify-content: center;
+margin-top: 55px;
+width: 100%;
+height: 60px;
+display: none;
+}
+
+.ul-menu{
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+}
+
+.ul-menu li{
+display: flex;
+align-items: center;
+justify-content: center;
+background-color: red;
+width: 150px;
+height: 50px;
+list-style: none;
+}
+
+.ul-menu li:hover {
+background: linear-gradient(rgb(255, 0, 0) 50%, #00000000 50%) 0 100% no-repeat;
+background-size: 100% 200%;
+transition: 0.5s;
+}
+
+.li-home{
+border-radius: 20px 0px;
+margin-right: 15px;
+}
+
+.li-galeria{
+border-radius: 20px 0px;
+margin-right: 15px;
+}
+
+.li-historia{
+border-radius: 20px 0px;
+margin-right: 15px;
+}
+
+.li-contato{
+border-radius: 20px 0px;
+}
+
+.ul-menu li a {
+text-decoration: none;
+font: 700 17px "nasa";
+color: white;
+}
+
+/* Titulo */
+h1{
+text-align: center;
+margin: 30px 0 30px 0;
+font: 700 50px "nasa";
+color: #ffffff;
+}
+
+/* Galeria sistema solar */
+.crate {
+display: grid;
+place-items: center;
+}
+
+.container {
+height: 333px;
+width: 250px;
+padding: 12px;
+margin-bottom: 50px;
+position: relative;
+background: linear-gradient(rgb(185, 7, 7) 50%, #000000 50%) 0 100% no-repeat;
+background-size: 100% 200%;
+transition: 0.7s;
+overflow: hidden;
+
+}
+
+.img-crate {
+height: 100%;
+width: 100%;
+position: relative;
+}
+
+.container img {
+width: 100%;
+height: 100%;
+}
+
+.container:hover {
+background-position: 0 0;
+}
+
+.details {
+position: absolute;
+background-color: #000000;
+color: #ffffff;
+width: 80%;
+text-align: center;
+padding: 10px 0;
+bottom: -150px;
+margin: auto;
+left: 0;
+right: 0;
+transition: 0.10s;
+}
+
+h2 {
+font-family: "nasa";
+font-weight: 500;
+letter-spacing: 1px;
+font-size: 20px;
+}
+
+h2:hover {
+color:#ed533f;
+cursor: pointer;
+}
+
+.temp-quente {
+font-family: "nasa";
+font-weight: 500;
+letter-spacing: 1px;
+font-size: 20px;
+margin-top: 8px;
+}
+
+.temp-quente:hover {
+color:#d11e06;
+cursor: pointer;
+}
+
+.temp-frio {
+font-family: "nasa";
+font-weight: 500;
+letter-spacing: 1px;
+font-size: 20px;
+margin-top: 8px;
+}
+
+.temp-frio:hover {
+color:#0cd0f3;
+cursor: pointer;
+}
+
+.google-icone {
+width: 100%;
+display: flex;
+justify-content: space-around;
+margin: 20px 0 5px 0;
+}
+
+.container:hover .details {
+bottom: 30px;
+}
+
+.img-crate:after {
+position: absolute;
+content: "";
+height: 100%;
+width: 100%;
+background-color: #000000;
+top: 0;
+left: 0;
+opacity: 0;
+transition: 0.7s;
+}
+
+.container:hover .img-crate:after {
+opacity: 0.5;
+background-color: #52a0e936;
+}
+
+i{
+  font-size: 30px;
+}
+
+i:hover {
+background-image: linear-gradient(to bottom, rgb(201, 41, 30), rgb(252, 218, 25), rgb(12, 179, 34), rgb(13, 113, 206));
+color: black;
+background-clip: text;
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+cursor: pointer;
+}
+
+/* Animação seta */
+@keyframes flutuar {
+0% {
+transform: translateY(0px);
+}
+
+50%{
+transform: translateY(-20px);
+}
+}
+
+/* Responsividade */
+@media (max-width: 1021px) {
+
+.ul-menu li{
+width: 115px;
+height: 30px;
+}
+
+.ul-menu li a {
+font: 700 13px "nasa";
+}
+
+}
+
+@media screen and (min-width: 992px) {
+
+.crate {
+grid-template-columns: repeat(3, 1fr);
+gap: 10px;
+}
+.container {
+height: 400px;
+width: 300px;
+padding: 15px;
+}
+}
+
+@media (max-width: 991px) {
+
+.ul-menu li{
+width: 150px;
+height: 40px;
+}
+
+.ul-menu li a {
+font: 700 15px "nasa";
+}
+
+.crate {
+grid-template-columns: repeat(3, 1fr);
+}
+
+}
+
+@media (max-width: 872px) {
+
+.crate {
+grid-template-columns: repeat(2, 1fr);
+}
+
+.container {
+height: 450px;
+width: 350px;
+}
+
+}
+
+@media (max-width: 772px) {
+
+
+.ul-menu li{
+width: 120px;
+height: 30px;
+}
+
+.ul-menu li a {
+font: 700 13px "nasa";
+}
+
+.crate {
+grid-template-columns: repeat(2, 1fr);
+}
+
+.container {
+height: 350px;
+width: 250px;
+}
+
+}
+
+@media (max-width: 552px) {
+
+.ul-menu li{
+width: 105px;
+height: 30px;
+}
+
+.ul-menu li a {
+font: 700 13px "nasa";
+}
+
+.crate {
+grid-template-columns: repeat(1, 1fr);
+}
+.container {
+height: 450px;
+width: 350px;
+}
+
+}
